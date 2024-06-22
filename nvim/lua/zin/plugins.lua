@@ -25,6 +25,23 @@ require('lazy').setup({
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make'
   },
+   -- nvim-cmp for autocompletion
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+  'hrsh7th/cmp-buffer', -- Buffer completions
+  'hrsh7th/cmp-path', -- Path completions
+  'hrsh7th/cmp-cmdline', -- Cmdline completions
+  -- Language servers for HTML, CSS
+  {
+    'williamboman/nvim-lsp-installer', -- to easily install LSPs
+    config = function()
+      require("nvim-lsp-installer").setup {}
+      local lspconfig = require('lspconfig')
+      -- Setup LSPs
+      lspconfig.html.setup {}
+      lspconfig.cssls.setup {}
+    end
+  },
   -- Add more plugins here
 })
 
