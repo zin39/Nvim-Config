@@ -1,4 +1,4 @@
--- ~/.config/nvim/lua/your_username/plugins.lua
+-- ~/.config/nvim/lua/your_rname/plugins.lua
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -25,6 +25,19 @@ require('lazy').setup({
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make'
   },
+  
+      -- Add these to your plugin list
+     'hrsh7th/nvim-cmp',
+     'hrsh7th/cmp-nvim-lsp',
+     'hrsh7th/cmp-buffer',
+     'hrsh7th/cmp-path',
+     'hrsh7th/cmp-cmdline',
+     'hrsh7th/vim-vsnip',
+     'windwp/nvim-autopairs',
+     'windwp/nvim-ts-autotag',
+     'neovim/nvim-lspconfig',
+     'prettier/vim-prettier',
+
   -- Add more plugins here
 })
 
